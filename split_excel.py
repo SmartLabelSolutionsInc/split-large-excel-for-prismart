@@ -12,8 +12,8 @@ rows_per_file = 950
 # Create the output folder if it doesn't exist
 os.makedirs(output_folder, exist_ok=True)
 
-# Read the entire Excel file
-df = pd.read_excel(input_file)
+# Read the entire Excel file, forcing all columns to be read as strings
+df = pd.read_excel(input_file, dtype=str)
 
 # Total number of data rows (excluding header)
 total_rows = len(df)
